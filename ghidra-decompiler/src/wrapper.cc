@@ -59,7 +59,7 @@ public:
 PcodeDecoder::PcodeDecoder(string &specfile, uint8_t *rust_dec, rust::cxxbridge1::u64 base_addr) 
   : loader(rust_dec, base_addr), sleigh(&loader, &context), base_addr(base_addr) { 
   
-  std::cerr << "[CONSTRUCTOR] specfile='" << specfile
+  std::cerr << "[PCODE GENERATOR] [GHIDRA DECOMPILER] specfile='" << specfile
       << "' base_addr=0x" << std::hex << base_addr << std::endl;
 
   // 1) Wrap the .sla path in <sleigh>...</sleigh>
@@ -79,11 +79,11 @@ PcodeDecoder::PcodeDecoder(string &specfile, uint8_t *rust_dec, rust::cxxbridge1
   
     // 3) Let the Sleigh engine load the compiled .sla
     sleigh.initialize(docstorage);
-    std::cerr << "[CONSTRUCTOR] Sleigh initialization SUCCESS" << std::endl;
+    std::cerr << "[PCODE GENERATOR] [GHIDRA DECOMPILER] Sleigh initialization SUCCESS" << std::endl;
   
   } catch (const ghidra::LowlevelError &err) {
     // Use 'err.explain' instead of 'err.what()'
-    std::cerr << "[CONSTRUCTOR] Sleigh initialization FAILED: "
+    std::cerr << "[PCODE GENERATOR] [GHIDRA DECOMPILER] Sleigh initialization FAILED: "
               << err.explain << std::endl;
     throw; // re-throw or handle as needed
   }

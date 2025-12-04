@@ -41,6 +41,6 @@ pub fn output_file_path(input_name: &str, type_name: &str) -> io::Result<PathBuf
 
 pub fn create_output_file(input_name: &str, type_name: &str) -> io::Result<fs::File> {
     let output_path = output_file_path(input_name, type_name)?;
-    println!("Output file will be created at: {output_path:?}");
+    println!("[PCODE GENERATOR] Output file will be created at: {output_path:?}");
     fs::File::create(&output_path)
 }

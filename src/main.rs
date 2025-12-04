@@ -88,21 +88,20 @@ fn main() {
     // Dispatch
     match mode.as_str() {
         "--high-pcode" => {
-            println!("Generating high pcode...");
+            println!("\n[PCODE GENERATOR] Generating high pcode...");
             high_pcode_generator::generate_high_pcode(&filename);
             println!("High pcode generation completed.");
         }
         "--low-pcode" => {
-            println!("Generating low pcode...");
+            println!("\n[PCODE GENERATOR] Generating low pcode...");
             // Pass the base address
             let res = low_pcode_generator::generate_low_pcode(&filename, base_addr); 
             match res {
                 Ok(()) => {
-                    println!("Low pcode generation completed.");
-                    println!("WARNING: If there were errors during P-code generation, check your output file.");
+                    println!("[PCODE GENERATOR] Low pcode generation completed.");
                 }
                 Err(e) => {
-                    eprintln!("Unable to finish correctly: {e}");
+                    eprintln!("[PCODE GENERATOR] Unable to finish correctly: {e}");
                     std::process::exit(-1);
                 }
             }
