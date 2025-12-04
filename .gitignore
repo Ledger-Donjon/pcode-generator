@@ -8,3 +8,4 @@
 /tests/tinygo-bug1/tinygo-bug1_ghidra
 /tests/tinygo-compress/tinygo-compress_ghidra
 /tests/tinygo-unsafeptr/tinygo-unsafeptr_ghidra
+/ghidra/Ghidra/Features/Decompiler/src/decompile/cpp/sleigh_opt
