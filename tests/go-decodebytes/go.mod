@@ -1,9 +1,7 @@
 module go-decodebytes
 
-go 1.20
+go 1.24.0
 
-toolchain go1.20
+require github.com/ethereum/go-ethereum v1.17.0
 
-require github.com/ethereum/go-ethereum v1.14.11
-
-require github.com/holiman/uint256 v1.3.1 // indirect
+require github.com/holiman/uint256 v1.3.2 // indirect
